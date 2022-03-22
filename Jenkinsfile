@@ -35,11 +35,12 @@ pipeline {
             }
             
             steps {
+                sh 'echo ${AWS_ACCESS_KEY_ID}'
                 sh 'terraform init -input=false'
                 sh 'terraform workspace select ${environment} || terraform workspace new ${environment}'
                 sh "terraform plan"
                 //sh "terraform plan -input=false -out tfplan "
-                sh 'terraform show -no-color tfplan > tfplan.txt'
+                //sh 'terraform show -no-color tfplan > tfplan.txt'
             }
         }
         stage('Approval') {
