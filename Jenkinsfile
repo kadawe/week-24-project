@@ -39,9 +39,9 @@ pipeline {
                 sh 'terraform init -upgrade'
                 //sh 'terraform init -input=false'
                 sh 'terraform workspace select ${environment} || terraform workspace new ${environment}'
-                sh "terraform plan"
-                //sh "terraform plan -input=false -out tfplan "
-                //sh 'terraform show -no-color tfplan > tfplan.txt'
+                //sh "terraform plan"
+                sh "terraform plan -input=false -out tfplan"
+                sh 'terraform show -no-color tfplan > tfplan.txt'
             }
         }
         stage('Approval') {
