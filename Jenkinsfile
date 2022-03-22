@@ -17,16 +17,16 @@ pipeline {
 
 
     stages {
-        stage('checkout') {
-            steps {
-                 script{
-                        dir("terraform")
-                        {
-                            git "https://github.com/troy-ingram/week-24-project.git"
-                        }
-                    }
-                }
-            }
+        // stage('checkout') {
+        //     steps {
+        //          script{
+        //                 dir("terraform")
+        //                 {
+        //                     git "https://github.com/troy-ingram/week-24-project.git"
+        //                 }
+        //             }
+        //         }
+        //     }
 
         stage('Plan') {
             when {
