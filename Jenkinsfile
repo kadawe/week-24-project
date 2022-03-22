@@ -36,7 +36,7 @@ pipeline {
             }
             
             steps {
-                sh 'echo ${AWS_ACCESS_KEY_ID}'
+                sh 'terraform upgrade'
                 sh 'terraform init -input=false'
                 sh 'terraform workspace select ${environment} || terraform workspace new ${environment}'
                 sh "terraform plan"
