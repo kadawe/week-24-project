@@ -17,16 +17,16 @@ pipeline {
     }
 
     stages {
-        stage('checkout') {
-            steps {
-                 script{
-                        dir("terraform")
-                        {
-                            git "https://github.com/kadawe/week-24-project.git"
-                        }
-                    }
-                }
-            }
+        // stage('checkout') {
+        //     steps {
+        //          script{
+        //                 dir("terraform")
+        //                 {
+        //                     git "https://github.com/kadawe/week-24-project.git"
+        //                 }
+        //             }
+        //         }
+        //     }
 
         stage('Plan') {
             // when {
@@ -85,7 +85,7 @@ pipeline {
         // steps {
         //    sh "terraform destroy --auto-approve"
         // }
-    }
+        //}
 
-  }
+    }
 }
